@@ -100,3 +100,5 @@ const data = [
     progreso: 0.65
   }
 ]
+
+export default data
