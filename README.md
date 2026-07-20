@@ -1,16 +1,40 @@
-# React + Vite
+# Taller React - Lista de Videojuegos
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Opción seleccionada
+Se desarrolló la **opción 2: Ejercicio enviado para revisión**.
 
-Currently, two official plugins are available:
+## Descripción
+La aplicación muestra una lista de videojuegos utilizando React. Cada videojuego contiene información como título, género, plataforma, año de lanzamiento, precio, disponibilidad y una barra de progreso que representa el avance del juego.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionamiento
+La información de los videojuegos se encuentra en un archivo `videojuegos.js`. Estos datos se cargan en el componente principal mediante `useState` y se envían al componente `TablaVideojuegos` mediante **props**. La lista se genera dinámicamente utilizando el método `map()`, que crea una fila de la tabla por cada videojuego.
 
-## React Compiler
+## Correcciones realizadas
+No hubo cosas por corregir en el proyecto.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Instalación y ejecución
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/danilui28/taller-videojuegos
+```
 
-## Expanding the Oxlint configuration
+2. Entrar a la carpeta del proyecto:
+```bash
+cd taller-videojuegos
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+3. Instalar las dependencias:
+```bash
+npm install
+```
+
+4. Ejecutar el servidor de desarrollo:
+```bash
+npm run dev
+```
+
+5. Abrir el navegador en la dirección mostrada por Vite (normalmente `http://localhost:5173`).
+
+## Estudiante
+
+**Nombre:** Luis David Macias
