@@ -1,101 +1,291 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.contenedor-tabla{
+
+    width:95%;
+    max-width:1400px;
+
+    margin:40px auto;
+
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #000000;
+.titulo-seccion{
+
+    margin-bottom:30px;
+
 }
 
-.contenedor {
-    width: 95%;
-    max-width: 1200px;
-    margin: 30px auto;
+.titulo-seccion h1{
+
+    font-size:2rem;
+
+    color:#3B82F6;
+
+    font-family:'Orbitron',sans-serif;
+
 }
 
-.contenedor h2 {
-    text-align: center;
-    margin-bottom: 10px;
+.titulo-seccion p{
+
+    color:#94A3B8;
+
+    margin-top:8px;
+
 }
 
-.contenedor p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fefefe;
+.tabla-responsive{
+
+    overflow-x:auto;
+
+    border-radius:20px;
+
+    background:rgba(17,24,39,.80);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
 }
 
-.tabla-responsive {
-    overflow-x: auto;
+.tabla-videojuegos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:1100px;
+
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgb(45, 43, 43);
-    min-width: 800px;
+thead{
+
+    background:#1E293B;
+
 }
 
-th,
-td {
-    padding: 14px;
-    text-align: center;
-    border-bottom: 1px solid #302e2e;
-    color: white;
+th{
+
+    padding:20px;
+
+    color:white;
+
+    text-align:left;
+
+    font-weight:600;
+
 }
 
-thead {
-    background: #113957;
-    color: white;
+td{
+
+    padding:18px;
+
+    color:#E2E8F0;
+
+    border-top:1px solid rgba(255,255,255,.05);
+
 }
 
-progress {
-    width: 120px;
-    height: 18px;
+tbody tr{
+
+    transition:.3s;
+
 }
 
-span {
-    margin-left: 8px;
-    font-weight: bold;
+tbody tr:hover{
+
+    background:#1F2937;
+
 }
 
-/* Tablets */
-@media (max-width: 768px) {
+.titulo-juego{
+
+    color:#60A5FA;
+
+    font-weight:bold;
+
+}
+
+.precio{
+
+    color:#22C55E;
+
+    font-weight:600;
+
+}
+
+.badge{
+
+    padding:8px 14px;
+
+    border-radius:50px;
+
+    font-size:.8rem;
+
+    font-weight:bold;
+
+}
+
+.disponible{
+
+    background:#14532D;
+
+    color:#4ADE80;
+
+}
+
+.nodisponible{
+
+    background:#7F1D1D;
+
+    color:#F87171;
+
+}
+
+.barra{
+
+    width:150px;
+
+    height:10px;
+
+    background:#374151;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:8px;
+
+}
+
+.relleno{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#3B82F6,#7C3AED);
+
+}
+
+.porcentaje{
+
+    font-size:.85rem;
+
+    color:#CBD5E1;
+
+}
+
+.acciones{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.acciones button{
+
+    border:none;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.editar{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.editar:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+
+}
+
+.eliminar{
+
+    background:#DC2626;
+
+    color:white;
+
+}
+
+.eliminar:hover{
+
+    background:#B91C1C;
+
+    transform:translateY(-2px);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+    .titulo-seccion h1{
+
+        font-size:1.7rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .contenedor-tabla{
+
+        width:98%;
+
+    }
 
     th,
-    td {
-        padding: 10px;
-        font-size: 14px;
+    td{
+
+        padding:14px;
+
     }
 
-    progress {
-        width: 90px;
+    .acciones{
+
+        flex-direction:column;
+
     }
+
+    .acciones button{
+
+        width:100%;
+
+    }
+
 }
 
-/* Celulares */
-@media (max-width: 480px) {
+@media(max-width:480px){
 
-    .contenedor {
-        width: 98%;
+    .titulo-seccion{
+
+        text-align:center;
+
     }
 
-    h2 {
-        font-size: 24px;
+    .titulo-seccion h1{
+
+        font-size:1.4rem;
+
     }
 
-    p {
-        font-size: 14px;
+    .titulo-seccion p{
+
+        font-size:.9rem;
+
     }
 
-    th,
-    td {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    progress {
-        width: 70px;
-    }
 }

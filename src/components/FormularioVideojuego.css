@@ -1,0 +1,368 @@
+.contenedor-formulario{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:40px 20px;
+
+}
+
+.card-formulario{
+
+    width:100%;
+
+    max-width:850px;
+
+    background:rgba(17,24,39,.85);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.card-formulario h1{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#60A5FA;
+
+    margin-bottom:10px;
+
+}
+
+.card-formulario p{
+
+    color:#94A3B8;
+
+    margin-bottom:30px;
+
+}
+
+.campo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:22px;
+
+}
+
+.campo label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.campo input,
+.campo select{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#1E293B;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.campo input:focus,
+.campo select:focus{
+
+    outline:2px solid #3B82F6;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.radio-group{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:12px;
+
+}
+
+.radio-group label{
+
+    background:#1F2937;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.radio-group label:hover{
+
+    background:#374151;
+
+}
+
+.check{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:20px 0;
+
+    font-weight:600;
+
+}
+
+.botones{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.botones button{
+
+    border:none;
+
+    padding:14px 26px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.guardar{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.guardar:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-2px);
+
+}
+
+.cancelar{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.cancelar:hover{
+
+    background:#4B5563;
+
+    transform:translateY(-2px);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .botones{
+
+        flex-direction:column;
+
+    }
+
+    .botones button{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .card-formulario{
+
+        padding:22px;
+
+    }
+
+    .card-formulario h1{
+
+        font-size:1.5rem;
+
+        text-align:center;
+
+    }
+
+    .card-formulario p{
+
+        text-align:center;
+
+    }
+
+}
+
+.plataformas{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+
+    margin:25px 0;
+
+}
+
+/* TITULO */
+
+.titulo-radio{
+
+    width:100%;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#60A5FA;
+
+    margin-bottom:5px;
+
+}
+
+/* TARJETAS */
+
+.plataformas label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    background:rgba(30,41,59,.85);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    color:white;
+
+    min-width:180px;
+
+    flex:1;
+
+}
+
+/* HOVER */
+
+.plataformas label:hover{
+
+    transform:translateY(-3px);
+
+    background:#374151;
+
+    box-shadow:0 10px 20px rgba(59,130,246,.25);
+
+}
+
+/* RADIO */
+
+.plataformas input[type="radio"]{
+
+    accent-color:#3B82F6;
+
+    width:18px;
+
+    height:18px;
+
+}
+
+/* CUANDO ESTA SELECCIONADO */
+
+.plataformas label:has(input:checked){
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    );
+
+    border-color:#60A5FA;
+
+    box-shadow:
+    0 0 20px rgba(59,130,246,.45);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .plataformas{
+
+        flex-direction:column;
+
+    }
+
+    .plataformas label{
+
+        width:100%;
+
+        min-width:100%;
+
+    }
+
+}

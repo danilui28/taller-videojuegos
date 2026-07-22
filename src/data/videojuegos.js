@@ -12,7 +12,7 @@ const data = [
   {
     id: 2,
     titulo: "Elden Ring",
-    genero: "RPG de Acción",
+    genero: "RPG",
     plataforma: "PC, PlayStation 5, Xbox Series X/S",
     lanzamiento: 2022,
     precio: 59.99,
@@ -22,7 +22,7 @@ const data = [
   {
     id: 3,
     titulo: "God of War Ragnarök",
-    genero: "Acción/Aventura",
+    genero: "Acción",
     plataforma: "PlayStation 5",
     lanzamiento: 2022,
     precio: 69.99,
@@ -42,7 +42,7 @@ const data = [
   {
     id: 5,
     titulo: "Red Dead Redemption 2",
-    genero: "Acción/Aventura",
+    genero: "Acción",
     plataforma: "PC, PlayStation 4, Xbox One",
     lanzamiento: 2018,
     precio: 39.99,
@@ -72,7 +72,7 @@ const data = [
   {
     id: 8,
     titulo: "Resident Evil 4 Remake",
-    genero: "Survival Horror",
+    genero: "Horror",
     plataforma: "PC, PlayStation 5, Xbox Series X/S",
     lanzamiento: 2023,
     precio: 59.99,
