@@ -16,6 +16,37 @@ function FormularioVideojuego({ onGuardar }) {
     const [precio, setPrecio] = useState("");
     const [progreso, setProgreso] = useState("");
     const [disponible, setDisponible] = useState(true);
+    const [sinopsis, setSinopsis] = useState("");
+    const [calificacion, setCalificacion] = useState("");
+
+    const [errores, setErrores] = useState({});
+
+    function validarFormulario() {
+        let erroresActivos = {};
+        const fechaActual = new Date().toISOString().split("T")[0];
+
+        if (titulo.trim() === "") {
+            erroresActivos.titulo = "El título no puede estar vacío.";
+        }
+        if (lanzamiento.trim() === "") {
+            erroresActivos.lanzamiento = "La fecha de lanzamiento es obligatoria.";
+        } else if (lanzamiento > fechaActual) {
+            erroresActivos.lanzamiento = "La fecha de lanzamiento no puede ser una fecha futura.";
+        }
+        if (calificacion === "" ||
+            Number(calificacion) <= 1 ||
+            Number(calificacion) >= 100
+        ) {
+            erroresActivos.calificacion =
+                "La calificación debe estar entre 1 y 100.";
+        }
+        if (sinopsis.trim().length < 10) {
+            erroresActivos.sinopsis =
+                "La reseña debe tener al menos 10 caracteres.";
+        }
+
+        return erroresActivos;
+    }
 
     useEffect(() => {
         if (juegoRecuperado) {
@@ -26,6 +57,8 @@ function FormularioVideojuego({ onGuardar }) {
             setPrecio(juegoRecuperado.precio);
             setProgreso(juegoRecuperado.progreso);
             setDisponible(juegoRecuperado.disponible);
+            setSinopsis(juegoRecuperado.sinopsis);
+            setCalificacion(juegoRecuperado.calificacion);
         } else {
             setTitulo("");
             setGenero("");
@@ -34,9 +67,22 @@ function FormularioVideojuego({ onGuardar }) {
             setPrecio("");
             setProgreso("");
             setDisponible(true);
+            setSinopsis("");
+            setCalificacion("")
         }
     }, [juegoRecuperado]);
+
     function manejarGuardar() {
+            
+        const erroresActivos = validarFormulario();
+
+        if (Object.keys(erroresActivos).length > 0) {
+           setErrores(erroresActivos);
+           return;
+        }
+
+        setErrores({});
+
         const videojuego = {
             id: juegoRecuperado? juegoRecuperado.id: Date.now(),
             titulo,
@@ -45,8 +91,9 @@ function FormularioVideojuego({ onGuardar }) {
             lanzamiento,
             precio: Number(precio),
             progreso: Number(progreso),
-            disponible
-
+            disponible,
+            sinopsis,
+            calificacion
         };
         onGuardar(videojuego);
         navigate("/");
@@ -71,6 +118,11 @@ function FormularioVideojuego({ onGuardar }) {
                         value={titulo}
                         onChange={(e) => setTitulo(e.target.value)}
                     />
+                    {errores.titulo &&
+                        <span className="error-mensaje">
+                            {errores.titulo}
+                        </span>
+                    }
                 </div>
                 <div className="campo">
                     <label>Género</label>
@@ -141,7 +193,7 @@ function FormularioVideojuego({ onGuardar }) {
                     <div className="campo">
                         <label>Año</label>
                         <input
-                            type="number"
+                            type="date"
                             value={lanzamiento}
                             onChange={(e) =>
                                 setLanzamiento(e.target.value)
@@ -159,7 +211,8 @@ function FormularioVideojuego({ onGuardar }) {
                         />
                     </div>
                 </div>
-                <div className="campo">
+                <div className="grid">
+                  <div className="campo">
                     <label>Progreso</label>
                     <input
                         type="number"
@@ -172,6 +225,22 @@ function FormularioVideojuego({ onGuardar }) {
                         }
                     />
                 </div>
+                  <div className="campo">
+                    <label>Calificación</label>
+                    <input
+                        type="text"
+                        min="1"
+                        max="100"
+                        value={calificacion}
+                        onChange={(e) => setCalificacion(e.target.value)}
+                    />
+                    {errores.calificacion &&
+                        <span className="error-mensaje">
+                            {errores.calificacion}
+                        </span>
+                    }
+                </div>
+                </div>
                 <label className="check">
                     <input
                         type="checkbox"
@@ -182,6 +251,19 @@ function FormularioVideojuego({ onGuardar }) {
                     />
                     Disponible
                 </label>
+                <div className="campo">
+                <textarea
+                    rows="4"
+                    value={sinopsis}
+                    onChange={(e) => setSinopsis(e.target.value)}
+                    placeholder="Escribe una breve reseña del videojuego..."
+                />
+                    {errores.sinopsis &&
+                        <span className="error-mensaje">
+                            {errores.sinopsis}
+                        </span>
+                    }
+                </div>
                 <div className="botones">
                     <button
                         className="cancelar"

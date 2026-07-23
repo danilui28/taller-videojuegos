@@ -63,11 +63,14 @@
 }
 
 .campo input,
-.campo select{
+.campo select,
+.campo textarea{
+
+    width:100%;
 
     padding:14px;
 
-    border:none;
+    border:2px solid transparent;
 
     border-radius:12px;
 
@@ -77,12 +80,19 @@
 
     font-size:15px;
 
+    transition:all .3s ease;
+
 }
 
 .campo input:focus,
-.campo select:focus{
+.campo select:focus,
+.campo textarea:focus{
 
-    outline:2px solid #3B82F6;
+    outline:none;
+
+    border-color:#3B82F6;
+
+    box-shadow:0 0 18px rgba(59,130,246,.35);
 
 }
 
@@ -202,6 +212,37 @@
 
 }
 
+.campo textarea{
+
+    min-height:120px;
+
+    resize:vertical;
+
+    transition:all .3s ease;
+
+}
+
+.campo textarea:focus{
+
+    min-height:180px;
+
+}
+
+input[type="number"]{
+
+    appearance:textfield;
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
 /* RESPONSIVE */
 
 @media(max-width:768px){
@@ -228,11 +269,13 @@
 
 @media(max-width:480px){
 
-    .card-formulario{
+.card-formulario{
 
-        padding:22px;
+    padding:20px;
 
-    }
+    border-radius:16px;
+
+}
 
     .card-formulario h1{
 
@@ -344,6 +387,42 @@
 
     box-shadow:
     0 0 20px rgba(59,130,246,.45);
+
+}
+
+.error-mensaje{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#FF6B6B;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    animation:mostrarError .35s ease;
+
+}
+
+@keyframes mostrarError{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-6px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
 

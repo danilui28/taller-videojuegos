@@ -31,6 +31,8 @@ function TablaVideojuegos({ videojuegos, onEliminar }) {
                             <th>Año</th>
                             <th>Precio</th>
                             <th>Estado</th>
+                            <th>Calificación</th>
+                            <th>Sinopsis</th>
                             <th>Progreso</th>
                             <th>Acciones</th>
                         </tr>
@@ -71,6 +73,12 @@ function TablaVideojuegos({ videojuegos, onEliminar }) {
                                             : "No"}
                                     </span>
 
+                                </td>
+
+                                <td>{juego.calificacion}</td>
+
+                                <td className="sinopsis">
+                                    {juego.sinopsis}
                                 </td>
 
                                 <td>

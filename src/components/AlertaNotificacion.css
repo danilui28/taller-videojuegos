@@ -1,0 +1,65 @@
+.toast{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    background:rgba(34,197,94,.92);
+
+    color:white;
+
+    padding:18px 26px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.35);
+
+    backdrop-filter:blur(10px);
+
+    animation:aparecer .35s ease;
+
+    z-index:9999;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateX(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateX(0);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+.toast{
+
+left:15px;
+
+right:15px;
+
+top:15px;
+
+text-align:center;
+
+}
+
+}
